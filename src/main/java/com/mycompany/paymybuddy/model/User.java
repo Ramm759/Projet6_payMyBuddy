@@ -35,16 +35,16 @@ public class User {
     @Column(name = "createdate")
     private Date createdate;
 
-    /*@OneToMany(mappedBy = "user" )
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<BankAccount> bankAccountList;
 
     @OneToMany(mappedBy = "owner" )
     private List<Relation> relations;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
-    private Collection<Role> roles;*/
+    private Collection<Role> roles;
 
     public Integer getId() {
         return id;
@@ -101,4 +101,28 @@ public class User {
     public void setCreatedate(Date createdate) {
         this.createdate = createdate;
     }
+
+    public List<BankAccount> getBankAccountList() {
+        return bankAccountList;
+    }
+
+    public void setBankAccountList(List<BankAccount> bankAccountList) {
+        this.bankAccountList = bankAccountList;
+    }
+
+    public List<Relation> getRelations() {
+        return relations;
+    }
+
+    public void setRelations(List<Relation> relations) {
+        this.relations = relations;
+    }
+
+    /*public Collection<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
+    }*/
 }
