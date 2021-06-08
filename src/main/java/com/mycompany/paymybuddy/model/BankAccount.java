@@ -14,10 +14,10 @@ public class BankAccount {
     @Column(name = "bic")
     private String bic;
 
-    @Column(name = "bankname")
+    @Column(name = "bank_name")
     private String bankname;
 
-    @Column(name = "accountname")
+    @Column(name = "account_name")
     private String accountname;
 
     @JoinColumn(name = "user_id")
