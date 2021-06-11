@@ -3,9 +3,11 @@ package com.mycompany.paymybuddy.service;
 import com.mycompany.paymybuddy.dto.UserRegistrationDTO;
 import com.mycompany.paymybuddy.model.Relation;
 import com.mycompany.paymybuddy.model.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserService implements IUserService{
 
     @Override

@@ -118,11 +118,11 @@ public class User {
         this.relations = relations;
     }
 
-    /*public Collection<Role> getRoles() {
+    public Collection<Role> getRoles() {
         return roles;
     }
 
     public void setRoles(Collection<Role> roles) {
         this.roles = roles;
-    }*/
+    }
 }

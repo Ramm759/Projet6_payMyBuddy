@@ -2,9 +2,11 @@ package com.mycompany.paymybuddy.service;
 
 import com.mycompany.paymybuddy.dto.ExternalTransferDTO;
 import com.mycompany.paymybuddy.dto.InternalTransferDTO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TransferService implements ITransferService{
 
     @Override

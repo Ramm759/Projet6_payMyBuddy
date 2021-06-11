@@ -2,9 +2,11 @@ package com.mycompany.paymybuddy.service;
 
 import com.mycompany.paymybuddy.dto.BankAccountDTO;
 import com.mycompany.paymybuddy.model.BankAccount;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class BankAccountService implements IBankAccountService{
 
     @Override
