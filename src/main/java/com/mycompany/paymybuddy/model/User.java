@@ -46,6 +46,20 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private Collection<Role> roles;
 
+
+    public User() {
+    }
+
+    public User(String lastname, String firstname, String email, String password, BigDecimal balance, Date createdate, Collection<Role> roles) {
+        this.lastname = lastname;
+        this.firstname = firstname;
+        this.email = email;
+        this.password = password;
+        this.balance = balance;
+        this.createdate = createdate;
+        this.roles = roles;
+    }
+
     public Integer getId() {
         return id;
     }

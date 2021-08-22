@@ -5,6 +5,7 @@ import com.mycompany.paymybuddy.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -18,13 +19,18 @@ public class RegistrationController {
     }
 
     @GetMapping()
-    public  String showRegistrationForm(){
-        return "registration" ;
+    public String showRegistrationForm() {
+        return "registration";
     }
 
-    @ModelAttribute("user")
-    public UserRegistrationDTO userRegistrationDTO (){
+    @ModelAttribute("user") // le formulaire s'appelle user
+    public UserRegistrationDTO userRegistrationDTO() {
         return new UserRegistrationDTO();
     }
 
+    @PostMapping
+    public String registerUserAccount (@ModelAttribute ("user") UserRegistrationDTO userRegistrationDTO){
+        userService.save(userRegistrationDTO);
+        return "redirect:/registration";
+    }
 }

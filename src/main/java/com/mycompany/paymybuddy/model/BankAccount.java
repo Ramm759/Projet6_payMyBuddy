@@ -25,7 +25,7 @@ public class BankAccount {
     private User user;
 
     @OneToMany (mappedBy = "bankAccount")
-    private List<ExternalTransfer> externalTransferList;
+    private List<ExternalTransfer> externalTransfers;
 
     public BankAccount() {
     }
@@ -75,5 +75,13 @@ public class BankAccount {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<ExternalTransfer> getExternalTransfers() {
+        return externalTransfers;
+    }
+
+    public void setExternalTransfers(List<ExternalTransfer> externalTransfers) {
+        this.externalTransfers = externalTransfers;
     }
 }
