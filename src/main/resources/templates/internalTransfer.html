@@ -3,7 +3,7 @@
 >
 <head th:insert="fragments/head"></head>
 <body>
-<nav th:insert="fragments/navbar"></nav>
+<nav th:insert="fragments/navigation"></nav>
 
 <main>
     <div class="container-page">
@@ -12,10 +12,8 @@
             <h5>Send Money</h5>
         </div>
 
-
-
         <div class="container-dropdown">
-            <form action="#" th:action="@{/user/transfer/internal}" th:object="${internalTransfer}" method="post">
+            <form action="#" th:action="@{/user/internalTransfer/makeTransfer}" th:object="${internalTransfer}" method="post">
                 <div class="form-group">
                     <select id="buddy" class="form-control" th:field="*{emailReceiver}">
                         <option th:each="relation : ${relations}" th:value="${relation.buddy.email}"
@@ -26,7 +24,7 @@
                     <input type="text" class="form-control"  th:field="*{description}" placeholder="Description">
                 </div>
                 <div class="input-group">
-                    <input type="number" class="form-control" min="0" th:field="*{amount}" placeholder="Montant">
+                    <input type="number" class="form-control" min="0" th:field="*{amountUser}" placeholder="Montant">
                     <span class="input-group-addon">$</span>
                 </div>
                 <input class="pay" type="submit" value="Pay"/>
@@ -49,7 +47,7 @@
                 <tr th:each="transfer : ${transfers}">
                     <td th:text="${transfer.emailReceiver}"></td>
                     <td th:text="${transfer.description}"></td>
-                    <td th:text="${transfer.amount}"></td>
+                    <td th:text="${transfer.amountUser}"></td>
                 </tr>
                 </tbody>
             </table>

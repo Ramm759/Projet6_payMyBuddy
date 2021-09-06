@@ -48,12 +48,12 @@
                     <td th:text="${bankAccount.bankname}"></td>
                     <td th:text="${bankAccount.accountname}"></td>
                     <td>
-<!--                        <form action="#" th:action="@{/user/extransfer/deleteBankAccount}" th:method="post" th:if="${#lists.isEmpty(bankAccount.externalTransfers)}">-->
-<!--                            <input type="hidden" th:value="${bankAccount.iban}" th:name="iban">-->
-<!--                            <button type="submit" class="btn-danger btn-sm">-->
-<!--                                <i class="fa fa-trash" aria-hidden="true"></i>-->
-<!--                            </button>-->
-<!--                        </form>-->
+                        <form action="#" th:action="@{/user/externalTransfer/deleteBankAccount}" th:method="post" th:if="${#lists.isEmpty(bankAccount.externalTransfers)}">
+                            <input type="hidden" th:value="${bankAccount.iban}" th:name="iban">
+                            <button type="submit" class="btn-danger btn-sm">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 </tbody>
@@ -85,28 +85,28 @@
             <span th:each="error : ${errors}" th:text="${error}"></span>
         </div>
 
-<!--        <h3 class="title-relation">My Transfer</h3>-->
+        <h3 class="title-relation">My Transfer</h3>
 
-<!--        <div class="container-table">-->
-<!--            <table class="table table-striped">-->
-<!--                <thead>-->
-<!--                <tr>-->
-<!--                    <th scope="col">IBAN</th>-->
-<!--                    <th scope="col">Amount</th>-->
-<!--                    <th scope="col">Fees</th>-->
-<!--                    <th scope="col">Description</th>-->
-<!--                </tr>-->
-<!--                </thead>-->
-<!--                <tbody>-->
-<!--                <tr th:each="externalTransfer : ${externalTransfers}">-->
-<!--                    <td th:text="${externalTransfer.ibanUser}"></td>-->
-<!--                    <td th:text="${externalTransfer.amountUser}"></td>-->
-<!--                    <td th:text="${externalTransfer.fees}"></td>-->
-<!--                    <td th:text="${externalTransfer.description}"></td>-->
-<!--                </tr>-->
-<!--                </tbody>-->
-<!--            </table>-->
-<!--        </div>-->
+        <div class="container-table">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">IBAN</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Fees</th>
+                    <th scope="col">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="externalTransfer : ${externalTransfers}">
+                    <td th:text="${externalTransfer.ibanUser}"></td>
+                    <td th:text="${externalTransfer.amountUser}"></td>
+                    <td th:text="${externalTransfer.fees}"></td>
+                    <td th:text="${externalTransfer.description}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </main>
 <footer th:insert="fragments/footer"></footer>

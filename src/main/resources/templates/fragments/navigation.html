@@ -11,15 +11,14 @@
                     class="icon-bar"></span> <span class="icon-bar"></span> <span
                     class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" th:href="@{/}">Registration and
-                Login Module</a>
+            <a class="navbar-brand" href="#" th:href="@{/}">Pay my buddy</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li sec:authorize="isAuthenticated()"><a th:href="@{/user/relation}">Relation</a></li>
                 <li sec:authorize="isAuthenticated()"><a th:href="@{/user/externalTransfer}">External Transfer</a></li>
                 <li sec:authorize="isAuthenticated()"><a th:href="@{/user/internalTransfer}">Internal Transfer</a></li>
-                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Login</a></li>
             </ul>
         </div>
     </div>

@@ -10,7 +10,6 @@ import java.util.List;
 // Email doit être unique
 @Table(name="user" , uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class User {
-
     @Id
     // On dit à Hybernate que id est généré par la Bd
     @GeneratedValue(strategy = GenerationType.IDENTITY)

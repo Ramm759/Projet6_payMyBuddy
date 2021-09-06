@@ -11,7 +11,7 @@ import java.util.Date;
 // Pk sera partagée dans les classes filles
 @Inheritance(strategy = InheritanceType.JOINED)
 
-public class Transfer {
+public abstract class Transfer {
     @Id
     // On dit à Hybernate que id est généré par la Bd
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -23,7 +23,7 @@ public class PayMyBuddyUserDetailsService implements UserDetailsService {
         User user = userDAO.findByEmail(email);
 
         GrantedAuthority authority = new SimpleGrantedAuthority("USER");
-        UserDetails userDetails = (UserDetails)new org.springframework.security.core.userdetails.User(user.getEmail(),
+        UserDetails userDetails = (UserDetails) new org.springframework.security.core.userdetails.User(user.getEmail(),
                 user.getPassword(), Arrays.asList(authority));
         return userDetails;
     }

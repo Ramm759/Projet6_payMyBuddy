@@ -1,7 +1,7 @@
 package com.mycompany.paymybuddy.service;
 
-import com.mycompany.paymybuddy.dao.RelationDao;
-import com.mycompany.paymybuddy.dao.RoleDao;
+import com.mycompany.paymybuddy.dao.RelationDAO;
+import com.mycompany.paymybuddy.dao.RoleDAO;
 import com.mycompany.paymybuddy.dao.UserDAO;
 import com.mycompany.paymybuddy.dto.UserRegistrationDTO;
 import com.mycompany.paymybuddy.exceptions.DataAlreadyExistException;
@@ -14,7 +14,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.sql.Array;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -23,11 +22,11 @@ import java.util.List;
 @Service
 public class UserService implements IUserService{
     @Autowired
-    private RoleDao roleDao;
+    private RoleDAO roleDao;
     @Autowired
     private UserDAO userDAO;
     @Autowired
-    private RelationDao relationDao;
+    private RelationDAO relationDao;
 
     static BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12); // 12 = force de l'encodage
 
